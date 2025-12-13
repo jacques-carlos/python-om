@@ -1,12 +1,15 @@
 """
 
-- objeto
-- classe > molde para o objeto
+- OBJETO(INSTÂNCIA)
+- CLASSE > molde para o objeto
 - instanciar > processo de criação de um objeto a partir de uma classe
-- variável da instância > atributo do objeto > exemplo: > p1.nome
-- variável da classe
-- metódo >  comportamento do objeto > exemplo > p1.andar
-- os métodos são funções que pertecem a um objeto/classe
+- VARIÁVEL > atributo de um objeto/classe
+- MÉTODO > função que pertece a um objeto/classe
+
+- VARIÁVEIS DE INSTÂNCIA > exemplo: > p1.nome
+- MÉTODOS DE INSTÂNCIA > exemplo > p1.andar
+- VARIÁVEIS DE CLASSE
+- MÉTODOS DE CLASSE
 
 """
 from pessoa import Pessoa
