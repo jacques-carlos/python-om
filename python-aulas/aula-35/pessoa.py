@@ -1,17 +1,16 @@
 from datetime import date
 
 class Pessoa:
-    # exemplo de variável da classe
-    ano_atual = date.today().year
+    ano_atual = date.today().year                                           #variável da classe
 
-    def __init__(self, nome, idade, comendo=False, falando=False):
-        self.nome = nome
+    def __init__(self, nome, idade, comendo=False, falando=False):          #construtor 
+        self.nome = nome                                                    #variável/atributo de um objeto
         self.idade = idade
         self.comendo = comendo
         self.falando = falando
     
 
-    def comer(self, alimento):
+    def comer(self, alimento):                                              #método de instância
         if self.falando:
             print(f'{self.nome} não pode comer enquanto fala.')
             return        
@@ -50,5 +49,4 @@ class Pessoa:
 
 
     def get_ano_nascimento(self):
-        return self.ano_atual - self.idade      # não poderia ser somente ano_atual
-        
+        return self.ano_atual - self.idade      #não poderia ser somente "ano_atual", pois é um método de instância

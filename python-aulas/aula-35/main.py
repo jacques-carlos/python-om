@@ -10,19 +10,20 @@
 - MÉTODOS DE INSTÂNCIA > exemplo > p1.andar
 - VARIÁVEIS DE CLASSE
 - MÉTODOS DE CLASSE
+- MÉTODOS ESTÁTICOS
 
 """
 from pessoa import Pessoa
 
-p1 = Pessoa('Irineu', 50)
-p2 = Pessoa('Creuza', 55)
+p1 = Pessoa('Irineu', 50) #criando objeto
+p2 = Pessoa('Creuza', 55) #criando objeto
 
-print(p1.ano_atual)
-print(Pessoa.ano_atual)
+print(p1.ano_atual) #printando ano atual (variável de classe)
+print(Pessoa.ano_atual) #printando ano atual (variável de classe)
 
-print(f'{p1.nome} nasceu em {p1.get_ano_nascimento()}.')
-print(f'{p2.nome} nasceu em {p2.get_ano_nascimento()}.')
+print(f'{p1.nome} nasceu em {p1.get_ano_nascimento()}.') #utilizando os atributos do objeto
+print(f'{p2.nome} nasceu em {p2.get_ano_nascimento()}.') #utilizando os atributos do objeto
 
-p1.falar('motos')
-p2.falar('carros')
-p1.comer('pizza')
+p1.falar('motos') #método de instância
+p2.falar('carros') #método de instância
+p1.comer('pizza') #método de instância
