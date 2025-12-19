@@ -1,6 +1,10 @@
-# if / elif / else
-# BLOCOS DE CÓDIGO
-# if condição -> retorna um boll (True/False)
+"""
+
+if / elif / else
+BLOCOS DE CÓDIGO
+if condição -> retorna um boll (True/False)
+
+"""
 
 condicao1 = False
 condicao2 = False

@@ -1,7 +1,11 @@
-# Variáveis são utilizadas para salvar algo na memória do computador.
-# PEP8: inicie Variáveis com letras minúsculas. Pode usar números e underline. (Snake Case)
-# Operador de atribuição: =
-# O operador = é usado para atribuir um valor a um nome (Variável).
+"""
+
+Variáveis são utilizadas para salvar algo na memória do computador.
+PEP8: inicie Variáveis com letras minúsculas. Pode usar números e underline. (Snake Case)
+Operador de atribuição: =
+O operador = é usado para atribuir um valor a um nome (Variável).
+
+"""
 
 nome_completo = 'Luiz Otávio Miranda'
 soma_dois_mais_dois = 2 + 2

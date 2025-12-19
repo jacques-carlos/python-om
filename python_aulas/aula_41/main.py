@@ -18,14 +18,14 @@ print(máquina.modelo)
 caneta.escrever()
 máquina.escrever()
 
-#exemplo 1
+# exemplo 1
 escritor.ferramenta = caneta
 escritor.ferramenta.escrever()
-#exemplo 2
+# exemplo 2
 escritor.ferramenta = máquina
 escritor.ferramenta.escrever()
 
-del escritor #embora o objeto 'escritor' tenha sido apagado, os objetos 'caneta' e 'máquina' continuam funcionando, mesmo que antes associados
-#print(escritor.nome)
+del escritor  # embora o objeto 'escritor' tenha sido apagado, os objetos 'caneta' e 'máquina' continuam funcionando, mesmo que antes associados
+# print(escritor.nome)
 print(caneta.marca)
 máquina.escrever()

@@ -5,20 +5,19 @@ MÉTODOS DE CLASSE / CLASS METHOD
 """
 from datetime import date
 
-class Pessoa:
-    ano_atual = date.today().year                           #variável de classe
 
-    def __init__(self, nome, idade):                        #construtor
+class Pessoa:
+    ano_atual = date.today().year  # variável de classe
+
+    def __init__(self, nome, idade):  # construtor
         self.nome = nome
         self.idade = idade
 
-
-    def get_ano_nascimento(self):                           #método de instância
+    def get_ano_nascimento(self):  # método de instância
         print(self.ano_atual - self.idade)
 
-
-    @classmethod                                            #decorador
-    def por_ano_nascimento(cls, nome, ano_nascimento):      #método de classe
+    @classmethod  # decorador
+    def por_ano_nascimento(cls, nome, ano_nascimento):  # método de classe
         idade = cls.ano_atual - ano_nascimento
         return cls(nome, idade)
 

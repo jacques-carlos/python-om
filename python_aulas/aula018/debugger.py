@@ -1,6 +1,10 @@
-# Debugger do VS Code e o interpretador do Python lendo códigos.
-# Debugger -> Depuração
-# Breakpoint
+""" 
+
+Debugger do VS Code e o interpretador do Python lendo códigos.
+Debugger -> Depuração
+Breakpoint
+
+"""
 
 condicao1 = False
 condicao2 = False

@@ -1,5 +1,5 @@
 class A:
-    vari =  123
+    vari = 123
 
     def __init__(self):
         self.vari = 321
@@ -8,11 +8,10 @@ class A:
 a1 = A()
 a2 = A()
 
-#o interpretador busca a variável primeiro na instância, depois na classe.
+# o interpretador busca a variável primeiro na instância, depois na classe.
 print(a1.vari)
 print(a2.vari)
 print(A.vari)
-
 
 
 class B:
@@ -25,7 +24,7 @@ class B:
 b1 = B()
 b2 = B()
 
-#essa é melhor maneira de alterar uma variável em todos os objetos: utilizando uma variável de classe
+# essa é melhor maneira de alterar uma variável em todos os objetos: utilizando uma variável de classe
 B.vari = 'Alterado'
 
 print(b1.vari)

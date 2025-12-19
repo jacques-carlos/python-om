@@ -15,6 +15,7 @@ class CarrinhoDeCompras:
             total += produto.valor
         return total
 
+
 class Produto:
     def __init__(self, nome, valor):
         self.nome = nome

@@ -1,6 +1,10 @@
-# if / elif / else
-# BLOCOS DE CÓDIGO
-# if condição -> boll (True, False, etc.)  ex.: if True and 1:  # pode parecer confuso mas é isso mesmo
+"""
+
+if / elif / else
+BLOCOS DE CÓDIGO
+if condição -> boll (True, False, etc.)  ex.: if True and 1:  # pode parecer confuso mas é isso mesmo
+
+"""
 
 entrada = input('Você quer "entrar" ou "sair"? ')
 
