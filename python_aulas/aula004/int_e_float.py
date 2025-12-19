@@ -2,6 +2,7 @@
 print(10)
 print(-10)
 print(0)
+
 # float -> número com ponto flutuante
 print(1.1)
 print(2.5, 4.9)
