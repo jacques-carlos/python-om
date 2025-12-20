@@ -1,5 +1,7 @@
 """
 
+FLUXO DO INTERPRETADOR
+
 if / elif / else
 BLOCOS DE CÓDIGO
 if condição -> retorna um boll (True/False)
