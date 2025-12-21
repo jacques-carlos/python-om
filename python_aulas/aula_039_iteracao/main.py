@@ -1,5 +1,6 @@
 """
 
+EXERCÍCIO
 Iterando strings com while
 
 """

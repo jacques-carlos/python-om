@@ -1,6 +1,6 @@
 """
 
-Exercício
+EXERCÍCIO
 Peça ao usuário para digitar seu nome
 Peça ao usuário para digitar sua idade
 Se nome e idade forem digitados:

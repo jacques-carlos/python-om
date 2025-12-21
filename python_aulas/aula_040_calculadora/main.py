@@ -1,3 +1,4 @@
+# EXERCÍCIO
 # CALCULADORA COM WHILE
 
 while True:

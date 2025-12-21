@@ -1,3 +1,5 @@
+# EXERCÍCIO
+
 nome = 'Carlos'
 altura = 1.8
 peso = 65.9

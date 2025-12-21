@@ -1,3 +1,5 @@
+# EXERCÍCIO
+
 from datetime import date
 nome = 'Carlos'
 sobrenome = 'Santos'
