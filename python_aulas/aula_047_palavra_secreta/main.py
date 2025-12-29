@@ -42,98 +42,99 @@ input()
 pygame.event.wait()
 # ==========================================================================
 
-
-PALAVRA_SECRETA = 'dinamarca'
+PALAVRA_SECRETA = 'abacaxi'
 tamanho_palavra_secreta = len(PALAVRA_SECRETA)
 
-# título
-linha()
-print('Adivinhe qual é a palavra secreta: '.upper().center(50))
-linha()
-espaco()
-sleep(2)
-
-tentativas = 0
-letras_tentadas = list()
-letras_acertadas = list()
-
 while True:
-    # a media que o usuário for acertado as letras, a resposta surgirá
-    resposta = ''
+    tentativas = 0
+    letras_tentadas = list()
+    letras_acertadas = list()
 
-    # o usuário digita uma letra
-    letra_digitada = input('Digite uma letra: ').lower()
-
-    # limpa o terminal
+    # título
     os.system('cls')
-
-    # retorna erro caso o usuário digite mais de uma letra
-    if len(letra_digitada) > 1:
-        print('\033[31mERRO! Digite apenas uma letra.\033[m')
-        continue
-
-    # retorna erro caso o usuário não digite uma letra
-    if not letra_digitada.isalpha():
-        print('\033[31mERRO! Digite uma letra.\033[m')
-        continue
-
-    # retorna erro caso o usuário já tenha digitado essa letra antes
-    if letra_digitada in letras_tentadas:
-        print('\033[31mERRO! Você já tentou essa letra.\033[m')
-        continue
-    # adicina a letra digitada na lista de tentativas
-    else:
-        letras_tentadas.append(letra_digitada)
-
-    # caso não ocorra nenhum erro, a resposta do usuário contará como uma tentativa
-    tentativas += 1
-
-    # caso o usuário acerte
-    if letra_digitada in PALAVRA_SECRETA:
-        espaco()
-        linha()
-        som_acerto.play()
-        print('\033[1;32;40mVOCÊ ACERTOU!\033[m'.center(62))
-        letras_acertadas.append(letra_digitada)
-    # caso o usuário erre
-    else:
-        espaco()
-        linha()
-        som_erro.play()
-        print(f'\033[1;31;40mVOCÊ ERROU!\033[m'.center(62))
-
-    # formação da resposta
-    for letra in PALAVRA_SECRETA:
-        if letra in letras_acertadas:
-            resposta += letra
-        else:
-            resposta += '*'
-
-    espaco()
-    print(f'Resposta: {resposta}'.upper().center(50))
-    espaco()
-    print(f'Tentativas: {tentativas}'.center(50))
     linha()
-    espaco()
-    sleep(2)
+    print('Adivinhe qual é a palavra secreta: '.upper().center(50))
 
-    # caso o usuário ganhe o jogo
-    if resposta == PALAVRA_SECRETA:
-        som_final.play()
+    while True:
+        # a medida que o usuário for acertado as letras, a resposta surgirá
+        resposta = ''
+
+        # formação da resposta
+        for letra in PALAVRA_SECRETA:
+            if letra in letras_acertadas:
+                resposta += letra
+            else:
+                resposta += '*'
+
+        # caso o usuário ganhe o jogo
+        if resposta == PALAVRA_SECRETA:
+            os.system('cls')
+            som_final.play()
+            linha()
+            print('\033[1;34;40mVOCÊ GANHOU PARABÉNS!!\033[m'.center(62))
+            espaco()
+            print(f'A palavra era: {PALAVRA_SECRETA}'.center(50))
+            espaco()
+            print(f'Tentativas: {tentativas}'.center(50))
+            linha()
+            espaco()
+
+            jogar_novamente = input(
+                'Deseja jogar novamente? Digite "S" para sim: ').strip().upper()
+            if jogar_novamente.startswith('S'):
+                break
+            else:
+                pygame.quit()
+                exit()
+
+        espaco()
+        print(f'Resposta: {resposta}'.upper().center(50))
+        espaco()
+        print(f'Tentativas: {tentativas}'.center(50))
         linha()
-        print('\033[1;34;40mVOCÊ GANHOU PARABÉNS!!\033[m'.center(62))
-        linha()
-        print(f'A palavra era: {PALAVRA_SECRETA}')
-        print(f'Tentativas: {tentativas}')
-        if tentativas < 10:
-            print('UAU!!!')
-        elif tentativas < 12:
-            print('Foi bem!')
-        elif tentativas < 15:
-            print('Dá pra melhorar!')
+        espaco()
+
+        # o usuário digita uma letra
+        letra_digitada = input('Digite uma letra: ').lower()
+
+        # limpa o terminal
+        os.system('cls')
+
+        # retorna erro caso o usuário digite mais de uma letra
+        if len(letra_digitada) > 1:
+            linha()
+            erro = 'ERRO! Digite apenas uma letra.'.center(50)
+            print(f'\033[31m{erro}\033[m')
+            continue
+
+        # retorna erro caso o usuário não digite uma letra
+        if not letra_digitada.isalpha():
+            linha()
+            erro = 'ERRO! Digite uma letra.'.center(50)
+            print(f'\033[31m{erro}\033[m')
+            continue
+
+        # retorna erro caso o usuário já tenha digitado essa letra antes
+        if letra_digitada in letras_tentadas:
+            linha()
+            erro = 'ERRO! Você já tentou essa letra.'.center(50)
+            print(f'\033[31m{erro}\033[m')
+            continue
+        # adicina a letra digitada na lista de tentativas
         else:
-            print('Nota DÓ!')
-        # reinicia os dados
-        tentativas = 0
-        letras_tentadas = list()
-        letras_acertadas = list()
+            letras_tentadas.append(letra_digitada)
+
+        # caso não ocorra nenhum erro, a resposta do usuário contará como uma tentativa
+        tentativas += 1
+
+        # caso o usuário acerte
+        if letra_digitada in PALAVRA_SECRETA:
+            linha()
+            som_acerto.play()
+            print('\033[1;32;40mVOCÊ ACERTOU!\033[m'.center(62))
+            letras_acertadas.append(letra_digitada)
+        # caso o usuário erre
+        else:
+            linha()
+            som_erro.play()
+            print(f'\033[1;31;40mVOCÊ ERROU!\033[m'.center(62))
