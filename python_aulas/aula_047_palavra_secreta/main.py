@@ -14,7 +14,6 @@ Faça a contagem de tentativas do seu usuário.
 
 """
 import os
-import pygame
 from time import sleep
 
 
@@ -25,22 +24,6 @@ def linha():
 def espaco():
     print()
 
-
-# ==========================================================================
-pygame.init()
-
-som_acerto = pygame.mixer.Sound(
-    'python_aulas/aula_047_palavra_secreta/som_acerto.mp3')
-som_erro = pygame.mixer.Sound(
-    'python_aulas/aula_047_palavra_secreta/som_erro.mp3')
-som_final = pygame.mixer.Sound(
-    'python_aulas/aula_047_palavra_secreta/som_final.mp3')
-
-pygame.mixer.music.load('python_aulas/aula_047_palavra_secreta/music.mp3')
-pygame.mixer.music.play(-1)
-input()
-pygame.event.wait()
-# ==========================================================================
 
 PALAVRA_SECRETA = 'abacaxi'
 tamanho_palavra_secreta = len(PALAVRA_SECRETA)
@@ -69,9 +52,8 @@ while True:
         # caso o usuário ganhe o jogo
         if resposta == PALAVRA_SECRETA:
             os.system('cls')
-            som_final.play()
             linha()
-            print('\033[1;34;40mVOCÊ GANHOU PARABÉNS!!\033[m'.center(62))
+            print('VOCÊ GANHOU PARABÉNS!!'.center(50))
             espaco()
             print(f'A palavra era: {PALAVRA_SECRETA}'.center(50))
             espaco()
@@ -84,7 +66,8 @@ while True:
             if jogar_novamente.startswith('S'):
                 break
             else:
-                pygame.quit()
+                os.system('cls')
+                print('Obrigador por jogar!'.center(50))
                 exit()
 
         espaco()
@@ -103,24 +86,21 @@ while True:
         # retorna erro caso o usuário digite mais de uma letra
         if len(letra_digitada) > 1:
             linha()
-            erro = 'ERRO! Digite apenas uma letra.'.center(50)
-            print(f'\033[31m{erro}\033[m')
+            print('ERRO! Digite apenas uma letra.'.center(50))
             continue
 
         # retorna erro caso o usuário não digite uma letra
         if not letra_digitada.isalpha():
             linha()
-            erro = 'ERRO! Digite uma letra.'.center(50)
-            print(f'\033[31m{erro}\033[m')
+            print('ERRO! Digite uma letra.'.center(50))
             continue
 
         # retorna erro caso o usuário já tenha digitado essa letra antes
         if letra_digitada in letras_tentadas:
             linha()
-            erro = 'ERRO! Você já tentou essa letra.'.center(50)
-            print(f'\033[31m{erro}\033[m')
+            print('ERRO! Você já tentou essa letra.'.center(50))
             continue
-        # adicina a letra digitada na lista de tentativas
+        # caso não: adicina a letra digitada na lista de tentativas
         else:
             letras_tentadas.append(letra_digitada)
 
@@ -130,11 +110,9 @@ while True:
         # caso o usuário acerte
         if letra_digitada in PALAVRA_SECRETA:
             linha()
-            som_acerto.play()
-            print('\033[1;32;40mVOCÊ ACERTOU!\033[m'.center(62))
+            print('VOCÊ ACERTOU!'.center(50))
             letras_acertadas.append(letra_digitada)
         # caso o usuário erre
         else:
             linha()
-            som_erro.play()
-            print(f'\033[1;31;40mVOCÊ ERROU!\033[m'.center(62))
+            print(f'VOCÊ ERROU!'.center(50))
