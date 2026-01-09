@@ -60,4 +60,3 @@ while True:
         # Usuário selecionou uma opção inexistente:
         else:
             print('Erro! Digite uma opção válida.')
-            continue
