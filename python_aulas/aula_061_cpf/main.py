@@ -47,23 +47,22 @@ while True:
     # O décimo dígito é o primeiro verificador (o foco desse exercício)
     cpf_verificador_1 = cpf_formatado[9]
 
-    soma = 0
+    resultado = 0
     multiplicador = 10
 
     for digito in cpf_base:
-        produto = int(digito) * multiplicador  # Cáculo da multiplicação
-        soma += produto  # Cálculo da soma
-        multiplicador -= 1  # A cada dígito que passa, o multiplicador diminui 1
+        # Multiplica e soma ao resultado
+        resultado += int(digito) * multiplicador
+        # A cada dígito que passa, o multiplicador diminui 1
+        multiplicador -= 1
 
-    # Multiplica por 10
-    total = soma * 10
-    # Divide por 11, pega o resto
-    resto = total % 11
+    # Multiplica por 10, Divide por 11 e pega o resto
+    resultado_final = (resultado * 10) % 11
     # Encontra o resultado final
-    resultado_final = 0 if resto > 9 else resto
+    digito_1 = 0 if resultado_final > 9 else resultado_final
 
     resposta = True if str(
-        resultado_final) == cpf_verificador_1 else False
+        digito_1) == cpf_verificador_1 else False
 
     print('O CPF é válido, por enquanto...') if resposta else print(
         'O CPF é inválido!')
