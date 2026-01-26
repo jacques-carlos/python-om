@@ -17,34 +17,33 @@ perguntas = [
         'Resposta': ('5', 'b')
     },
     {
-        'Pergunta': 'Quem é o maior time do Brasil?',
-        'Opções': ['Santos', 'Corinthians', 'Palmeiras', 'São Paulo'],
-        'Resposta': ('Palmeiras', 'c')
+        'Pergunta': 'Quantas Copas do Mundo de Futebol tem o Brasil?',
+        'Opções': ['1', '4', '5', '2'],
+        'Resposta': ('5', 'c')
     }
 ]
 
 letras = ['a', 'b', 'c', 'd']
 
 while True:
-    acertos = 0
+    quantidade_acertos = 0
+    quantidade_perguntas = 0  # utilizar a função len() ocasionaria futuras limitações
 
     for pergunta in perguntas:
-        print()
-        print(pergunta['Pergunta'])
-        print()
+        quantidade_perguntas += 1
+        print(f'\n[PERGUNTA {quantidade_perguntas}] {pergunta['Pergunta']}')
 
-        for letra, alternativa in enumerate(pergunta['Opções']):
-            print(f'{letras[letra]}) {alternativa}')
-        print()
+        for indice, alternativa in enumerate(pergunta['Opções']):
+            print(f'{letras[indice]}) {alternativa}')
         resposta = input('Qual é a alternativa correta? ')
 
         if resposta in pergunta['Resposta']:
             print('Você acertou!')
-            acertos += 1
+            quantidade_acertos += 1
         else:
             print('Você errou!')
 
-    print()
-    print('Acabaram as perguntas. Obrigado por jogar!')
-    print(f'Você acertou {acertos} perguntas.')
+    print('\nAcabaram as perguntas. Obrigado por jogar!')
+    print(
+        f'Você acertou {quantidade_acertos} de {quantidade_perguntas} perguntas.')
     break
