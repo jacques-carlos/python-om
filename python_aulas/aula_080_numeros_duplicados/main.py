@@ -14,6 +14,21 @@ Requisitos:
 
 """
 
+
+def encontrar_primeiro_numero_duplicado(lista):
+    numeros_checados = []
+    primeiro_numero_duplicado = -1
+
+    for numero in lista:
+        if numero in numeros_checados:
+            primeiro_numero_duplicado = numero
+            break
+        else:
+            numeros_checados.append(numero)
+
+    return primeiro_numero_duplicado
+
+
 lista_de_listas = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],  # Isso é uma lista de números
     [9, 1, 8, 9, 9, 7, 2, 1, 6, 8],
@@ -29,16 +44,7 @@ lista_de_listas = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
-for lista_de_numeros in lista_de_listas:
-    lista_de_numeros_analisados = []
-    primeiro_numero_duplicado = -1
 
-    for numero in lista_de_numeros:
-
-        if numero in lista_de_numeros_analisados:
-            primeiro_numero_duplicado = numero
-            break
-        else:
-            lista_de_numeros_analisados.append(numero)
-
-    print(f'O primeiro número duplicado foi: {primeiro_numero_duplicado}')
+for lista in lista_de_listas:
+    primeiro_numero_duplicado = encontrar_primeiro_numero_duplicado(lista)
+    print(lista, primeiro_numero_duplicado)
